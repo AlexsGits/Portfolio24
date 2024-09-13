@@ -16,7 +16,7 @@ body{
 
 section{
     width: 100%;
-    height: 70vh;
+    min-height: 70vh;
 }
 
 /* NAVBAR SECTION */
@@ -38,6 +38,7 @@ nav ul{
     gap: 1.5em;
     list-style-type: none;
     width: 97%;
+    flex-wrap: wrap;
 }
 
 .section-name{
@@ -53,6 +54,7 @@ nav ul{
     text-decoration-color: #34faa7;
     text-underline-offset: 5px;
 }
+
 .resume{
     position: absolute;
     right: 5em;
@@ -60,7 +62,19 @@ nav ul{
     transform: translateY(-50%); /
 }
 
-.resume button {
+.resume a{
+    color: #1B1717;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.resume a:hover{
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: #1B1717;
+}
+
+nav button {
 	box-shadow: 0px 6px 14px -6px #34faa7;
 	background-color:#34faa7;
 	border-radius: 4px;
@@ -74,10 +88,8 @@ nav ul{
 	padding: 7px 15px;
 	text-decoration: none;
 }
-.resume button:hover {
-	background-color:#34faa7;
-}
-.resume button:active {
+
+nav button:active {
 	position: relative;
 	top: 1px;
 }
@@ -132,28 +144,36 @@ h4{
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
-    height: 60vh;
+    height: 70vh;
 }
 
 h2{
-    font-size: 5rem;
+    font-size: 4rem;
     text-decoration: underline;
     text-decoration-color: #34faa7;
     font-weight: 400;
 }
+
 #projects .container{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .projects{
     background-color: #1B1717;
-    height: 500px;
-    width: 375px;
+    height: 400px;
+    width: 300px;
     border-radius: 10px;
     border: 3px solid #34faa7;
     filter: drop-shadow(black .5rem .5rem 10px);
+}
+
+.projects img{
+    width: 10rem;
+    height: 10rem;
 }
 
 #project_one{
@@ -172,12 +192,41 @@ h2{
     text-decoration: underline;
     text-decoration-color: #34faa7;
 }
+
+.projects button{
+    box-shadow: 0px 6px 14px -6px #34faa7;
+	background-color:#34faa7;
+	border-radius: 4px;
+	border: 1px solid #34faa7;
+	display: inline-block;
+	cursor: pointer;
+	color:#000000;
+	font-family: Arial;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 7px 15px;
+	text-decoration: none;
+}
+
+.projects button:hover {
+	background-color:#34faa7;
+}
+
+.projects button:active {
+	position: relative;
+	top: 1px;
+}
+
+.projects .button{
+    padding-bottom: 20px;
+}
+
 /* SKILL SECTION */
 
 /* CONTACT SECTION */
 #contact{
     background-color: #D7D5D5;
-    height: 40vh;
+    min-height: 40vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -198,6 +247,7 @@ h2{
     font-size: 1.75rem;
     text-decoration: none;
     cursor: pointer;
+    text-align: center;
 }
 
 .social-links:hover{
@@ -222,6 +272,7 @@ h2{
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
+    text-align: center;
 }
 
 .social-img{
@@ -251,4 +302,65 @@ footer .container{
 
 footer h4{
     text-decoration: none;
+}
+
+/* HAMBURGER MENU */
+.hamburger {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background-color: #FFF;
+    margin: 4px;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* NAVBAR ADJUSTMENTS FOR MOBILE */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 70px; /* Below the navbar */
+        right: 0;
+        height: calc(100% - 70px);
+        width: 200px;
+        background-color: #1B1717;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 2rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    nav ul.active {
+        transform: translateX(0);
+    }
+
+    nav ul li {
+        margin: 1.5rem 0;
+    }
+
+    #home .container{
+        flex-direction: column;
+    }
+
+    h1{
+        font-size: 2rem;
+    }
+
+    .text-container{
+        width: 300px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 }
