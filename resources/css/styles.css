@@ -160,6 +160,20 @@ h2{
     justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 1rem;
+    width: fit-content;
+}
+
+.proj-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.arrow-svg svg path{
+    color: #1B1717;
 }
 
 .projects{
