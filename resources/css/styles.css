@@ -163,20 +163,27 @@ h2{
     width: fit-content;
 }
 
+.proj-container #left-arrow{
+    transform: rotate(180deg);
+}
+
+.arrow-svg{
+    display: none;
+}
+
 .proj-container{
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-direction: row;
-    overflow: hidden;
 }
 
 .arrow-svg svg path{
     color: #1B1717;
 }
 
-.projects{
+.projectz{
     background-color: #1B1717;
     height: 400px;
     width: 300px;
@@ -185,7 +192,7 @@ h2{
     filter: drop-shadow(black .5rem .5rem 10px);
 }
 
-.projects img{
+.projectz img{
     width: 10rem;
     height: 10rem;
 }
@@ -195,7 +202,13 @@ h2{
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    
+}
+
+#project_two{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
 }
 
 #projects h3{
@@ -207,7 +220,7 @@ h2{
     text-decoration-color: #34faa7;
 }
 
-.projects button{
+.project button{
     box-shadow: 0px 6px 14px -6px #34faa7;
 	background-color:#34faa7;
 	border-radius: 4px;
@@ -222,16 +235,16 @@ h2{
 	text-decoration: none;
 }
 
-.projects button:hover {
+.project button:hover {
 	background-color:#34faa7;
 }
 
-.projects button:active {
+.project button:active {
 	position: relative;
 	top: 1px;
 }
 
-.projects .button{
+.project .button{
     padding-bottom: 20px;
 }
 
@@ -394,40 +407,87 @@ footer h4{
         margin: 1.5rem 0;
     }
 
-    #home .container{
+    #home .container {
         flex-direction: column;
     }
 
-    h1{
-        font-size: 2rem;
+    h1 {
+        font-size: 2rem; /* Adjust font size for better visibility on mobile */
     }
 
-    .text-container{
-        width: 300px;
+    .text-container {
+        width: 300px; /* Consider using a percentage for better responsiveness */
         flex-direction: row;
         flex-wrap: wrap;
     }
 
     .image-container {
-        height: 80%;
+        height: auto; /* Change to auto for better scaling */
         width: 80%;
         margin: 10px 0;
+        display: flex; /* Ensure it uses flex properties */
         flex-direction: row;
         flex-wrap: wrap;
-        
     }
 
     .image-container svg {
-        width: 7rem;
+        width: 7rem; /* SVG size */
         height: 7rem;
         margin-bottom: 20px;
     }
+
+    .arrow-svg {
+        display: flex; /* Make sure arrows are visible */
+        cursor: pointer; /* Indicate that arrows are clickable */
+    }
+
+    .proj-container {
+        display: flex;
+        flex-direction: row; /* Stack project items vertically */
+        justify-content: space-evenly;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .projects {
+        display: none; /* Hide all projects initially */
+    }
+
+    .projects.active {
+        display: block; /* Show only the active project */
+    }
+
+    .arrow-svg svg {
+        display: block;
+        width: 2rem; /* Size for arrows */
+        cursor: pointer; /* Change cursor for arrows */
+    }
+
+    #projects .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row; /* Adjust to stack vertically */
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+
+    #project_two {
+        display: none; /* Make sure this is hidden by default */
+    }
 }
+
 
 /* Styles for iPads */
 @media (min-width: 768px) and (max-width: 1024px) {
     .hamburger {
         display: flex;
+    }
+
+    .arrow-svg svg{
+        display: block;
+        width: 3rem;
+        margin-right: 5px;
     }
 
     nav ul {
@@ -478,5 +538,35 @@ footer h4{
         width: 10rem;
         height: 10rem;
         margin: 20px;
+    }
+
+    .proj-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .projects {
+        display: none;
+    }
+
+    .projects.active {
+        display: block;
+    }
+
+    .arrow-svg {
+        display: block;
+        cursor: pointer;
+        
+    }
+
+    #projects .container {
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+
+    #project_two{
+        display: none;
     }
 }

@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./resources/css/styles.css">
+    
 </head>
 <body>
     <nav>
@@ -39,36 +40,45 @@
     <section id="projects">
         <h2>Projects</h2>
         <div class="proj-container">
-            <div class="arrow-svg">
+            <div class="arrow-svg" id="left-arrow">
                 <svg width="57" height="75" viewBox="0 0 57 75" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M-2.68669e-05 3.75215L-2.98174e-05 71.2522C0.00211401 71.9356 0.190598 72.6054 0.545136 73.1897C0.899678 73.7739 1.40684 74.2504 2.01204 74.5679C2.61725 74.8853 3.29757 75.0317 3.97978 74.9913C4.66199 74.9509 5.32026 74.7251 5.88372 74.3384L54.6337 40.5884C56.655 39.1897 56.655 35.8222 54.6337 34.4197L5.88372 0.669649C5.32143 0.278992 4.66284 0.0499023 3.97949 0.00726869C3.29614 -0.035365 2.61418 0.110089 2.00769 0.427826C1.40121 0.745564 0.893394 1.22343 0.539432 1.80951C0.18547 2.3956 -0.0011064 3.06747 -2.68669e-05 3.75215Z" fill="#F8F8F8"/>
                 </svg>
             </div>
-            <div class="container">
-                <div class="projects" id="project_one">
+            <div class="project">
+                <div class="projectz" id="project_one" class="active"> <!-- Add "active" class here -->
                     <h3>QR Generator</h3>
                     <a href="">
-                        <img src="/resources/images/qr-code (4).png" alt="qr-code">                      
+                        <img src="/resources/images/qr-code (4).png" alt="QR Code">                      
                     </a>
-                    <div class="button"><a href="https://alexsgits.github.io/qrGenerator/" target="_blank" rel="noopener noreferrer"><button type="button">Check me out!</button></a></div>
+                    <div class="button">
+                        <a href="https://alexsgits.github.io/qrGenerator/" target="_blank" rel="noopener noreferrer">
+                            <button type="button">Check me out!</button>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="projects" id="project_one">
+            <div class="project">
+                <div class="projectz" id="project_two" > <!-- No "active" class here -->
                     <h3>StudyFlash</h3>
                     <a href="">
-                        <img src="/resources/images/qr-flash.png" alt="qr-code">                      
+                        <img src="/resources/images/qr-flash.png" alt="QR Code">                      
                     </a>
-                    <div class="button"><a href="http://studyflash.study/" target="_blank" rel="noopener noreferrer"><button type="button">Check me out!</button></a></div>
+                    <div class="button">
+                        <a href="http://studyflash.study/" target="_blank" rel="noopener noreferrer">
+                            <button type="button">Check me out!</button>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="arrow-svg">
+            <div class="arrow-svg" id="right-arrow">
                 <svg width="57" height="75" viewBox="0 0 57 75" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M-2.68669e-05 3.75215L-2.98174e-05 71.2522C0.00211401 71.9356 0.190598 72.6054 0.545136 73.1897C0.899678 73.7739 1.40684 74.2504 2.01204 74.5679C2.61725 74.8853 3.29757 75.0317 3.97978 74.9913C4.66199 74.9509 5.32026 74.7251 5.88372 74.3384L54.6337 40.5884C56.655 39.1897 56.655 35.8222 54.6337 34.4197L5.88372 0.669649C5.32143 0.278992 4.66284 0.0499023 3.97949 0.00726869C3.29614 -0.035365 2.61418 0.110089 2.00769 0.427826C1.40121 0.745564 0.893394 1.22343 0.539432 1.80951C0.18547 2.3956 -0.0011064 3.06747 -2.68669e-05 3.75215Z" fill="#F8F8F8"/>
                 </svg>
             </div>
         </div>
     </section>
+    
     <section id="skills" class="section">
         <h2>Skills</h2>
         <div class="image-container">
@@ -157,12 +167,13 @@
         </div>           
     </footer>
     <script>
-        function toggleMenu() {
+    function toggleMenu() {
         const navMenu = document.querySelector('nav ul');
-        navMenu.classList.toggle('active');
-    }
+         navMenu.classList.toggle('active');
+    }   
 
     document.querySelector('.hamburger').addEventListener('click', toggleMenu);
     </script>
+    <script src="./resources/javascript/slider.js" defer></script>
 </body>
 </html>
